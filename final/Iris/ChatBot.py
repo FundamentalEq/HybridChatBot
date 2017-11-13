@@ -123,11 +123,16 @@ class ChatBot(object):
                     return resp
                 else:
                     return '---$---'
-if __name__ =='__main__':
-    search_object = response.Response()
-    IRIS = ChatBot(search_object)
-    IRIS.initialise()
-    IRIS.main("did you change your hair",1)
-    del search_object
-    del IRIS
+
+#if __name__ =='__main__':
+#    search_object = response.Response()
+#    IRIS = ChatBot(search_object)
+#    IRIS.initialise()
+#    IRIS.main("did you change your hair",1)
+#    del search_object
+#    del IRIS
     #print "yahoo"
+    
+search_object = response.Response()
+IRIS = ChatBot(search_object)
+
