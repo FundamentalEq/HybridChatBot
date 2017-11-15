@@ -1,0 +1,3 @@
+*.pyc
+final/checkpoint/*
+final/data/*

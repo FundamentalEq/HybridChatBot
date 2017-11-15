@@ -17,16 +17,16 @@ def main():
     vocab = load_vocabulary()
     model = build_model(len(vocab.word2index), load_ckpt=True, ckpt_epoch=ckpt_epoch)
     bot = BotAgent(model, vocab)
-    IRIS.initialise()
+ #   IRIS.initialise()
     while True:
         user_input = raw_input('me: ')
         if user_input.strip() == '':
             continue
         Iris_resp = IRIS.main(user_input, 2)
-        if Iris_resp != '---$---':
-            print('%s: %s' % (BOT_NAME, Iris_resp))
+        if Iris_resp != '---$---' and len(Iris_resp.split()) <= 10  :
+            print('%s: %s' % ("Iris", Iris_resp))
         else:
-            print('%s: %s' % (BOT_NAME, bot.response(user_input)))
+            print('%s: %s' % ("Seq", bot.response(user_input)))
 
 if __name__ == '__main__':
     main()

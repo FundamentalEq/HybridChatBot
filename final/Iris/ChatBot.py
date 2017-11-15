@@ -22,11 +22,11 @@ class ChatBot(object):
         self.ps = PorterStemmer()
         self.stopWords = set(stopwords.words('english'))
     def load_index(self):
-        self.index = json.loads(open("../data/invertedindex.txt").read())
+        self.index = json.loads(open("./data/invertedindex.txt").read())
         print("Inverted-Index loaded successfully")
 
     def load_dialogue(self):
-        self.dialogue = json.loads(open("../data/dialogues.txt").read())
+        self.dialogue = json.loads(open("./data/dialogues.txt").read())
         print("Dialogues loaded successfully")
 
     def pp(self,who):
@@ -103,9 +103,12 @@ class ChatBot(object):
                     break
             #print b
             dgn=search_object.getResponse(b,mode)
-            resp=self.dialogue[int(dgn)+1]
-            resp=resp.replace(globalValues.selfname,self.selfname)
-            resp=resp.replace(globalValues.othername,self.username)
+            if dgn != '---$---' :
+                resp=self.dialogue[int(dgn)+1]
+                resp=resp.replace(globalValues.selfname,self.selfname)
+                resp=resp.replace(globalValues.othername,self.username)
+            else :
+                resp = dgn 
             if mode==1:
                 self.pp(0)
                 print resp
@@ -132,7 +135,6 @@ class ChatBot(object):
 #    del search_object
 #    del IRIS
     #print "yahoo"
-    
+
 search_object = response.Response()
 IRIS = ChatBot(search_object)
-

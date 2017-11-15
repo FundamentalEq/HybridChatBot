@@ -14,8 +14,8 @@ class Response(object):
 
         # Load tf-idf vectors
         print "Loading Tf-idf vectors"
-        self.Tf_idf_vectors = json.loads(open("../data/tf_idf_vectors.txt").read())
-        self.invertedIndex = json.loads(open("../data/invertedindex.txt").read())
+        self.Tf_idf_vectors = json.loads(open("./data/tf_idf_vectors.txt").read())
+        self.invertedIndex = json.loads(open("./data/invertedindex.txt").read())
         print "Tf-idf vectors loaded"
 
     def get_query_vec(self,query):
