@@ -1,4 +1,4 @@
-## Welcome to HybridBot Site
+## Welcome to HybridBot
 
 You can download it from this [link](https://github.com/FundamentalEq/Seq2seqchatBot). It is an hybrid of two types of bot, First one is IRIS ChatBot and Second one is Seq2Seq chatbot.
 
